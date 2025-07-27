@@ -6,7 +6,7 @@ def convert_to_markdown(poem):
     try:
         lines = [] 
         lines.append(f"# {poem['title']}\n")
-        lines.append(f"**作者**\n")
+        lines.append(f"\n**作者**\n")
         lines.append(f"{poem['author']}\n")
         lines.append(f"**朝代**\n")
         lines.append(f"{poem['dynasty']}\n")
@@ -84,7 +84,6 @@ def process_poetry_files(poetry_dir, strains_dir, output_dir):
                             print(f"警告：处理诗歌失败 - ID: {poem.get('id', 'unknown')}, 错误: {str(e)}")
                 
                 print(f"已完成文件 {file} 的处理，成功转换 {processed_count} 首诗")
-                break
 
         except Exception as e:
             print(f"错误：处理文件 {file} 失败 - {str(e)}")
@@ -93,7 +92,7 @@ def process_poetry_files(poetry_dir, strains_dir, output_dir):
 def main():
     poetry_dir = '/home/wqh/projects/ChinesePoetry/全唐诗'
     strains_dir = '/home/wqh/projects/ChinesePoetry/strains/json'
-    output_dir = '/home/wqh/projects/ChinesePoetry/output'
+    output_dir = '/home/wqh/projects/ChinesePoetry/output/quantangshi'
     
     process_poetry_files(poetry_dir, strains_dir, output_dir)
 
